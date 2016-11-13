@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+	<Array id="plusConfig" type="java.lang.String">
+		<Item>org.eclipse.jetty.webapp.WebInfConfiguration</Item>
+		<Item>org.eclipse.jetty.webapp.WebXmlConfiguration</Item>
+		<Item>org.eclipse.jetty.plus.webapp.EnvConfiguration</Item>
+		<Item>org.eclipse.jetty.plus.webapp.PlusConfiguration</Item>
+	</Array>
+
+	<Set name="configurationClasses">
+		<Ref id="plusConfig" />
+	</Set> 
+	
+	<Set name="contextPath">/</Set>
+	<Set name="baseResource">
+		<New class="org.eclipse.jetty.util.resource.ResourceCollection">
+      		<Arg>
+        		<Array type="java.lang.String">
+        			<Item><SystemProperty name="jetty.home" default="." />/src/main/webapp</Item>
+		        </Array>
+      		</Arg>
+    	</New>
+    </Set>
+</Configure> 
