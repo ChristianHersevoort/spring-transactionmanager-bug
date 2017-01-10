@@ -13,8 +13,8 @@ import javax.sql.DataSource;
 /**
  * @author Christian Hersevoort
  */
-@Configuration
-@EnableTransactionManagement
+//@Configuration
+//@EnableTransactionManagement
 public class SpringTransactionConfiguration implements TransactionManagementConfigurer {
 
     public SpringTransactionConfiguration() {
